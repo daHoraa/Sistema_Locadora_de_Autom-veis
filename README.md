@@ -7,7 +7,7 @@ O funcionário poderá:
 - Fornecer detalhes relevantes sobre veículos disponíveis   
 - listar todos os veículos disponíveis   
 - marcar um veículo como alugado ou indisponível (por estar em manuteção, etc)
-Para qque nosso sistema tenha um grau elevado de detalhamento, haverá meio de informar se um carro alugado foi batido ou roubado.
+Para que nosso sistema tenha um grau elevado de detalhamento, haverá meio de informar se um carro alugado foi batido ou roubado.
 
 ## Classes:
   - Funcionario
