@@ -11,12 +11,12 @@ Para que nosso sistema tenha um grau elevado de detalhamento, haverá meio de in
 
 ## Classes:   
   - [Pessoa](https://github.com/daHoraa/Sistema_Locadora_de_Autom-veis/blob/master/Sistema/Pessoa.py)
-  - Funcionario
+    - Funcionario   
+    - Cliente
   - Veiculo (Superclasse de carro e moto)
-  - Carro (é um tipo de veículo, portanto subclasse de veículo)
-  - Moto (é um tipo de veículo, portanto subclasse de veículo)
+    - Carro (é um tipo de veículo, portanto subclasse de veículo)
+    - Moto (é um tipo de veículo, portanto subclasse de veículo)
   - Aluguel
-  - Cliente
  
  ## Interface Gráfica     
  Segundo o site [devmedia](https://www.devmedia.com.br/tkinter-interfaces-graficas-em-python/33956) existem diversos frameworks e ferramentas que permitem a criação interfaces gráficas em python, são alguns deles: WxWidgets; Tkinter; Kivy; PyGTK; PySide; QT.   
