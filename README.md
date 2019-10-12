@@ -18,6 +18,10 @@ Para que nosso sistema tenha um grau elevado de detalhamento, haverá meio de in
     - Moto (é um tipo de veículo, portanto subclasse de veículo)
   - Aluguel
  
+ ## Diagrama de Classe
+ ![Diagrama_de_classes](https://user-images.githubusercontent.com/49700354/66707568-7f268000-ed10-11e9-89d8-246a01613ec3.png)
+
+ 
  ## Interface Gráfica     
  Segundo o site [devmedia](https://www.devmedia.com.br/tkinter-interfaces-graficas-em-python/33956) existem diversos frameworks e ferramentas que permitem a criação interfaces gráficas em python, são alguns deles: WxWidgets; Tkinter; Kivy; PyGTK; PySide; QT.   
 Porém, para este projetos usaremos apenas o Tkinter por possuir como vantagem a sua facilidade de uso e recursos disponíveis. Outra vantagem é que é nativo da linguagem Python, tudo o que precisamos fazer é importá-lo no momento do uso, ou seja, estará sempre disponível.
