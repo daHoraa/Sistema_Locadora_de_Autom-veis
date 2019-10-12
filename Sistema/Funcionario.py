@@ -1,0 +1,2 @@
+class Funcionario(Pessoa)
+  pass
