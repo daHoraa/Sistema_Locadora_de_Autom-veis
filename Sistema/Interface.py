@@ -41,7 +41,7 @@ construtor da classe Application.
 #altera o titulo da janela
 janela.title("Locadora 4x4")
 
-#altera a cor do fundo
+#altera a cor do fundo.
 janela["bg"] = "pink"
 
 #LARGURAxALTURA + ESQUERDA + DISTANCIA DO TOPO
