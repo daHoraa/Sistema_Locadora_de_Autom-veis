@@ -8,5 +8,6 @@ class Pessoa(Endereco):
     self.estado_civil = estado_civil
     self.sexo = sexo
     super().__init__(CEP, rua, bairro, n_casa, cidade, estado)
+  
  
     
