@@ -1,13 +1,13 @@
 import sys
 
-from veiculos import Veiculos, Disponivel
+# veiculo import Veiculos, Disponivel
 #from notebook import Notebook, Note
 
 class Menu:
     '''Mostra um menu e aciona as ações apropriadas com base
     nas opções escolhidas.'''
     def __init__(self):
-        self.veiculos = Veiculos()
+        #self.veiculos = Veiculos()
         #self.notebook = Notebook()
         self.choices = {
             "1": self.mostrar_veiculos,
