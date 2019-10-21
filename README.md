@@ -19,7 +19,7 @@ Para que nosso sistema tenha um grau elevado de detalhamento, haverá meio de in
   - Aluguel
  
  ## Diagrama de Classe
- ![Diagrama_de_classes (2)](https://user-images.githubusercontent.com/49700354/67210680-82dc9580-f3e7-11e9-8163-9ca5edaa692f.png)
+ ![Diagrama_de_classes (3)](https://user-images.githubusercontent.com/49700354/67211117-3776b700-f3e8-11e9-9022-99bea0388003.png)
 
  
  ## Interface Gráfica     
