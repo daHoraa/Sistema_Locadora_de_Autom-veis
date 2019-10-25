@@ -1,4 +1,5 @@
 from endereco import *
+from cpf import CPF
 
 class Pessoa(Endereco):
   def __init__(self, nome, rg, cpf, nascimento, estado_civil, sexo, CEP, rua, bairro, n_casa, cidade, estado):
@@ -9,7 +10,7 @@ class Pessoa(Endereco):
     self._sexo = sexo
     super().__init__(CEP, rua, bairro, n_casa, cidade, estado)
   
- def _set_nome(self,nome):
+  def _set_nome(self,nome):
       if not isinstance(nome, str):
         raise TypeError("Nome: entre com uma string")
       if len(nome < 3):
@@ -19,5 +20,6 @@ class Pessoa(Endereco):
   def _get_nome(self):
         self._nome = nome
   
-  def _set_cpf(self.cpf):
-        if cpf
+  def _set_cpf(self, cpf):
+        assert valido.isValid()
+        assert invalido.isValid()
