@@ -1,7 +1,7 @@
 from pessoa import *
 from veiculo import *
 
-class Gerente:
+class Gerente():
 
     def cria_funcionario():
         pass
