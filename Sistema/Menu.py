@@ -14,7 +14,8 @@ class Menu:
             "2": self.buscar_veiculos,
             "3": self.alugar_veiculo,
             "4": self.devolver_veiculo,
-            "5": self.quit
+            "5": self.gerenciar_clientes,
+            "0": self.quit
         }
     def display_menu(self):
         print("""
@@ -24,7 +25,8 @@ class Menu:
         2. Buscar Veiculo
         3. Alugar veiculo
         4. Devolver veiculo
-        5. Sair
+        5. Gerenciar clientes
+        0. Sair
         """)
     def run(self):
         '''Mostra o menu e aciona a opção escolhida.'''
@@ -70,6 +72,8 @@ class Menu:
     def quit(self):
         print("Obrigado por usar nosso sitema!")
         sys.exit(0)
+
+    def gerenciarclientes():
         
 if __name__ == "__main__":
     Menu().run()
