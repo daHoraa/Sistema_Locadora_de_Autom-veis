@@ -49,7 +49,7 @@ class Gui():
         self.btnDel = Button(self.window, text="Deletar Selecionados")
         self.btnClose = Button(self.window, text="Fechar")
 
-    def config_layout(self):
+    def configure_layout(self):
         
         #Associando os objetos a grid da janela...
         self.lblnacionalidade.grid(row=0,column=0)
