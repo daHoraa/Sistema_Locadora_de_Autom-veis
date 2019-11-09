@@ -22,7 +22,7 @@ class BdAccess():
             BdAccess.conn = sql.connect(BdAccess.database)
             BdAccess.cur = BdAccess.conn.cursor()
             BdAccess.connected = True
-            self.execute("CREATE TABLE IF NOT EXISTS clientes (id INTEGER PRIMARY KEY , nacionalidade , self.tipo_domumento , self.cpf , self.nome , self.sobrenome , self.email , self.cpf , self.genero , self.telefone , self.numero_cnh , self.numero_registro_cnh , self.data_validade_cnh , self.uf_cnh , self.rg , self.nascimento , self.cep , self.logradouro , self.endereco , self.numero_endereco , self.complemento , self.bairro , self.cidade , self.estado TEXT)")
+            self.execute("CREATE TABLE IF NOT EXISTS clientes (id INTEGER PRIMARY KEY , nacionalidade TEXT, tipo_domumento TEXT, cpf TEXT, nome TEXT, sobrenome TEXT, email TEXT, cpf TEXT, genero TEXT, telefone TEXT, numero_cnh TEXT, numero_registro_cnh TEXT, data_validade_cnh TEXT, uf_cnh TEXT, rg TEXT, nascimento TEXT, cep TEXT, logradouro TEXT, endereco TEXT, numero_endereco TEXT, complemento TEXT, bairro TEXT, cidade TEXT, estado TEXT)")
         except sqlite3.Error as error:
             print("Erro no banco de dados: ", error)
  
@@ -82,7 +82,7 @@ class ClientDAO:
     def insert(self, cliente):
         "insere novos registros no banco"
         try:
-            self.bd.execute("INSERT INTO clientes VALUES(NULL, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", ( self.nacionalidade , self.tipo_domumento , self.cpf , self.nome , self.sobrenome , self.email , self.cpf , self.genero , self.telefone , self.numero_cnh , self.numero_registro_cnh , self.data_validade_cnh , self.uf_cnh , self.rg , self.nascimento , self.cep , self.logradouro , self.endereco , self.numero_endereco , self.complemento , self.bairro , self.cidade , self.estado))
+            self.bd.execute("INSERT INTO clientes VALUES(NULL, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", ( self.nacionalidade , self.tipo_domumento , self.cpf , self.nome , self.sobrenome , self.email , self.cpf , self.genero , self.telefone , self.numero_cnh , self.numero_registro_cnh , self.data_validade_cnh , self.uf_cnh , self.rg , self.nascimento , self.cep , self.logradouro , self.endereco , self.numero_endereco , self.complemento , self.bairro , self.cidade , self.estado))
             self.bd.persist()
         except sqlite3.Error as error:
             print("Falha ao tentar inserir os registros")
@@ -97,7 +97,7 @@ class ClientDAO:
         '''
         rows = None
         try:
-            self.bd.execute("SELECT * FROM clientes WHERE nome=? or sobrenome=? or email=? or cpf=?", (cliente.nacionalidade or cliente.tipo_domumento or cliente.cpf or cliente.nome or cliente.sobrenome or cliente.email or cliente.cpf or cliente.genero or cliente.telefone or cliente.numero_cnh or cliente.numero_registro_cnh or cliente.data_validade_cnh or cliente.uf_cnh or cliente.rg or cliente.nascimento or cliente.cep or cliente.logradouro or cliente.endereco or cliente.numero_endereco or cliente.complemento or cliente.bairro or cliente.cidade or cliente.estado))
+            self.bd.execute("SELECT * FROM clientes WHERE nacionalidade =? or tipo_documento =? or nome=? or sobrenome=? or email=? or cpf=? or cpf =? or genero =? or telefone =? or numero_cnh =? or numero_registro_cnh =? or data_validade_cnh =? or uf_cnh =? or rg =? or nascimento =? or cep = ? or logradouro = ? or endereco = ? or numero_endereco = ? or complemento = ? or bairro = ? or cidade = ? or estado = ?", (cliente.nacionalidade or cliente.tipo_domumento or cliente.nome or cliente.sobrenome or cliente.email or cliente.cpf or cliente.genero or cliente.telefone or cliente.numero_cnh or cliente.numero_registro_cnh or cliente.data_validade_cnh or cliente.uf_cnh or cliente.rg or cliente.nascimento or cliente.cep or cliente.logradouro or cliente.endereco or cliente.numero_endereco or cliente.complemento or cliente.bairro or cliente.cidade or cliente.estado))
             rows = self.bd.fetchall()
         except sqlite3.Error as error:
             print("Falha ao tentar buscar os registros")

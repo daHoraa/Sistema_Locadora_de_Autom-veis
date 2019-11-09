@@ -166,4 +166,4 @@ class Gui():
         self.configure_sizes()
         self.window.mainloop()
 
-                                                                                                        Gui().run()
+#Gui().run()

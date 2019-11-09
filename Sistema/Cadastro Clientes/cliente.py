@@ -32,6 +32,7 @@ class Client:
         self.contato_emergencial = contato_emergencial
         self.nome_contato_emergencial = nome_contato_emergencial
 
-        self.estado_civil
+        #self.estado_civil = estado_civil
+
     def __str__(self):
         print(self.nacionalidade , self.tipo_documento , self.genero , self.telefone , self.numero_cnh , self.numero_registro_cnh , self.data_validade_cnh , self.uf_cnh , self.rg , self.nascimento, self.cep , self.logradouro , self.endereco , self.numero_endereco , self.complemento , self.bairro , self.cidade , self.estado, self.nome, self.sobrenome, self.email, self.cpf)
