@@ -5,7 +5,6 @@ import tkinter as tk
 from tkinter import *
 from tkinter import Tk, StringVar, Label, Entry, Listbox, Scrollbar, Button
 
-
 LARGE_FONT= ("Verdana", 13)
 
 
@@ -13,19 +12,26 @@ class SeaofBTCapp(tk.Tk):
 
     
     def __init__(self, *args, **kwargs):
-
-        #tk.attributes("-fullscreen", True)
         
         tk.Tk.__init__(self, *args, **kwargs)
+        
+        
+
+        Label(text="4x4 Rent a Car S/A").pack()
+
+        separator = Frame(height=2, bd=1, relief=SUNKEN)
+        separator.pack(fill=X, padx=5, pady=5)
+
         container = tk.Frame(self)
 
         container.pack(side="top", fill="both", expand = True)
-
+        
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
 
+        # quais paginas poderao ser acessadas 
         for F in (StartPage, PageOne, PageTwo):
 
             frame = F(container, self)
@@ -53,6 +59,12 @@ class StartPage(tk.Frame):
                             command=lambda: controller.show_frame(PageOne))
         button.pack()
 
+
+        separator = Frame(height=2, bd=1, relief=SUNKEN)
+        separator.pack(fill=X, padx=5, pady=5)
+
+        Label(text="© 4x4 - Todos os direitos reservados").pack()
+
         button2 = tk.Button(self, text="Sou um funcionário",
                             command=lambda: controller.show_frame(PageTwo))
         button2.pack()
@@ -69,9 +81,15 @@ class PageOne(tk.Frame):
                             command=lambda: controller.show_frame(StartPage))
         button1.pack()
 
+        button3 = tk.Button(self, text="Cadastrar funcionário",
+                            command=lambda: controller.show_frame(PageTwo))
+        button3.pack()
+
         button2 = tk.Button(self, text="Login",
                             command=lambda: controller.show_frame(PageTwo))
         button2.pack()
+
+        
 
 
 class PageTwo(tk.Frame):
@@ -86,10 +104,8 @@ class PageTwo(tk.Frame):
         button1.pack()
 
         button2 = tk.Button(self, text="Login",
-                            command=lambda: controller.show_frame(PageOne))
+                            command=lambda: controller.show_frame(LoginFuncionario))
         button2.pack()
-        
-
-
+     
 app = SeaofBTCapp()
 app.mainloop()
