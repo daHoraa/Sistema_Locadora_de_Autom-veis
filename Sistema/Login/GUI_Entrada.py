@@ -6,7 +6,7 @@ from tkinter import *
 from tkinter import Tk, StringVar, Label, Entry, Listbox, Scrollbar, Button
 
 
-LARGE_FONT= ("Verdana", 12)
+LARGE_FONT= ("Verdana", 13)
 
 
 class SeaofBTCapp(tk.Tk):
@@ -46,14 +46,14 @@ class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self,parent)
-        label = tk.Label(self, text="Start Page", font=LARGE_FONT)
+        label = tk.Label(self, text="Seja bem-vindo!", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button = tk.Button(self, text="Visit Page 1",
+        button = tk.Button(self, text="Sou o administrador",
                             command=lambda: controller.show_frame(PageOne))
         button.pack()
 
-        button2 = tk.Button(self, text="Visit Page 2",
+        button2 = tk.Button(self, text="Sou um funcionário",
                             command=lambda: controller.show_frame(PageTwo))
         button2.pack()
 
@@ -62,14 +62,14 @@ class PageOne(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Page One!!!", font=LARGE_FONT)
+        label = tk.Label(self, text="Bem-vindo, administrador!!!", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = tk.Button(self, text="Back to Home",
+        button1 = tk.Button(self, text="Voltar à página de entrada",
                             command=lambda: controller.show_frame(StartPage))
         button1.pack()
 
-        button2 = tk.Button(self, text="Page Two",
+        button2 = tk.Button(self, text="Login",
                             command=lambda: controller.show_frame(PageTwo))
         button2.pack()
 
@@ -78,14 +78,14 @@ class PageTwo(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Page Two!!!", font=LARGE_FONT)
+        label = tk.Label(self, text="Bem-vindo, funcionário!!!", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = tk.Button(self, text="Back to Home",
+        button1 = tk.Button(self, text="Voltar à página de entrada",
                             command=lambda: controller.show_frame(StartPage))
         button1.pack()
 
-        button2 = tk.Button(self, text="Page One",
+        button2 = tk.Button(self, text="Login",
                             command=lambda: controller.show_frame(PageOne))
         button2.pack()
         
