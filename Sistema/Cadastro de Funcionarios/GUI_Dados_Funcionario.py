@@ -39,7 +39,7 @@ class Gui():
         self.entNascimento = Entry(self.window, textvariable=self.txtNascimento)
         self.entInstrucao = Entry(self.window, textvariable=self.txtInstrucao)
         
-        self.listFuncionarios = Listbox(self.window, width=100)
+        self.listFuncionarios = Listbox(self.window, width=200, height=30)
         self.scrollFuncionarios = Scrollbar(self.window)
 
         self.btnViewAll = Button(self.window, text="Ver todos")
@@ -76,12 +76,12 @@ class Gui():
              
         self.listFuncionarios.grid(row=0, column=2, rowspan=10)
         self.scrollFuncionarios.grid(row=0, column=3, rowspan=10)
-        self.btnViewAll.grid(row=10, column=0, columnspan=2)
-        self.btnBuscar.grid(row=11, column=0, columnspan=2)
-        self.btnInserir.grid(row=12, column=0, columnspan=2)
-        self.btnUpdate.grid(row=13, column=0, columnspan=2)
-        self.btnDel.grid(row=14, column=0, columnspan=2)
-        self.btnClose.grid(row=15, column=0, columnspan=2)
+        self.btnViewAll.grid(row=12, column=2, columnspan=1)
+        self.btnBuscar.grid(row=13, column=2, columnspan=1)
+        self.btnInserir.grid(row=14, column=2, columnspan=1)
+        self.btnUpdate.grid(row=15, column=2, columnspan=1)
+        self.btnDel.grid(row=16, column=2, columnspan=1)
+        self.btnClose.grid(row=17, column=2, columnspan=1)
         
         self.listFuncionarios.configure(yscrollcommand=self.scrollFuncionarios.set)
         self.scrollFuncionarios.configure(command=self.listFuncionarios.yview)
@@ -89,16 +89,16 @@ class Gui():
     def configure_sizes(self):
         "definindo o tamanho dos elementos"
         x_pad = 10
-        y_pad = 6
+        y_pad = 5
 
         for child in self.window.winfo_children():
             widget_class = child.__class__.__name__
             if widget_class == "Button":
                 child.grid_configure(sticky='WE', padx=x_pad, pady=y_pad)
             elif widget_class == "Listbox":
-                child.grid_configure(padx=5, pady=5, sticky='NS')
+                child.grid_configure(padx=4, pady=4, sticky='NS')
             elif widget_class == "Scrollbar":
-                child.grid_configure(padx=5, pady=5, sticky='NS')
+                child.grid_configure(padx=4, pady=4, sticky='NS')
             else:
                 child.grid_configure(padx=x_pad, pady=y_pad, sticky='N')
 
