@@ -32,7 +32,7 @@ class SeaofBTCapp(tk.Tk):
         self.frames = {}
 
         # quais paginas poderao ser acessadas 
-        for F in (StartPage, PageOne, PageTwo):
+        for F in (StartPage, LoginAdministrador, LoginFuncionario):
 
             frame = F(container, self)
 
@@ -56,7 +56,7 @@ class StartPage(tk.Frame):
         label.pack(pady=10,padx=10)
 
         button = tk.Button(self, text="Sou o administrador",
-                            command=lambda: controller.show_frame(PageOne))
+                            command=lambda: controller.show_frame(LoginAdministrador))
         button.pack()
 
 
@@ -66,11 +66,11 @@ class StartPage(tk.Frame):
         Label(text="© 4x4 - Todos os direitos reservados").pack()
 
         button2 = tk.Button(self, text="Sou um funcionário",
-                            command=lambda: controller.show_frame(PageTwo))
+                            command=lambda: controller.show_frame(LoginFuncionario))
         button2.pack()
 
 
-class PageOne(tk.Frame):
+class LoginAdministrador(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -82,17 +82,17 @@ class PageOne(tk.Frame):
         button1.pack()
 
         button3 = tk.Button(self, text="Cadastrar funcionário",
-                            command=lambda: controller.show_frame(PageTwo))
+                            command=lambda: controller.show_frame(LoginFuncionario))
         button3.pack()
 
         button2 = tk.Button(self, text="Login",
-                            command=lambda: controller.show_frame(PageTwo))
+                            command=lambda: controller.show_frame(LoginFuncionario))
         button2.pack()
 
         
 
 
-class PageTwo(tk.Frame):
+class LoginFuncionario(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
