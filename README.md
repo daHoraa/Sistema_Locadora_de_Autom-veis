@@ -2,9 +2,6 @@
 
 Um software para de aluguel de veículos para a disciplina de Programação Orientada a Objetos lecionada pelo professor Filipe Dwan na UFRR, campus Paricarana, 2019.2.
  
- ## Diagrama de Classe
- ![Diagrama_de_classes (3)](https://user-images.githubusercontent.com/49700354/67211117-3776b700-f3e8-11e9-9022-99bea0388003.png)
-
 # Instalação
 
 ## Precompilado
