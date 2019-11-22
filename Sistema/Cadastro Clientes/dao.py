@@ -23,14 +23,15 @@ class BdAccess():
             BdAccess.cur = BdAccess.conn.cursor()
             BdAccess.connected = True
             self.execute("CREATE TABLE IF NOT EXISTS clientes (id INTEGER PRIMARY KEY , nacionalidade TEXT, tipo_domumento TEXT, cpf TEXT, nome TEXT, sobrenome TEXT, email TEXT, cpf TEXT, genero TEXT, telefone TEXT, numero_cnh TEXT, numero_registro_cnh TEXT, data_validade_cnh TEXT, uf_cnh TEXT, rg TEXT, nascimento TEXT, cep TEXT, logradouro TEXT, endereco TEXT, numero_endereco TEXT, complemento TEXT, bairro TEXT, cidade TEXT, estado TEXT)")
-        except sqlite3.Error as error:
-            print("Erro no banco de dados: ", error)
- 
-    def disconnect(self):
-        " fecha a conexão com o banco de dados"
-        BdAccess.conn.close()
-        BdAccess.connected = False
- 
+        #except sqlite3.Error as error:
+            #print("Erro no banco de dados: ", error)
+    #fecha a conexão com o banco de dados
+    
+
+    #def disconnect(self):
+        #BdAccess.conn.close()
+        #BdAccess.connected = False
+
     def execute(self, sql, parms = None):
         '''
         executa um comando no banco de dados. recebe três parâmetros:
