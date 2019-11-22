@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, StringVar, Label, Entry, Listbox, Scrollbar, Button
 
 class Gui():
     def __init__(self):
@@ -106,5 +106,3 @@ class Gui():
         self.configure_layout()
         self.configure_sizes()
         self.window.mainloop()
-
-Gui().run()
