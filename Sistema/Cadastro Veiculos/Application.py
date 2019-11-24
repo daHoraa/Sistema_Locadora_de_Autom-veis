@@ -1,4 +1,4 @@
-from GUI import Gui
+from telas import Tela_CadastroVeiculos
 from dao import VeiculoDAO
 from tkinter import END
 from model import Veiculo

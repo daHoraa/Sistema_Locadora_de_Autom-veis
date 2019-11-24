@@ -1,4 +1,4 @@
-from GUI_Dados_Funcionario import *
+from telas import Tela_CadastroFuncionario
 from dao import FuncionarioDAO
 from tkinter import END
 from funcionario import Funcionario
