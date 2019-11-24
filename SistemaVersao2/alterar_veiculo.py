@@ -5,7 +5,7 @@ import tkinter.messagebox
 import datetime
 
 
-class CadastroVeiculo(Toplevel):
+class AlteraVeiculo(Toplevel):
     '''Classe interface cadastrar veiculo'''
 
     def __init__(self, master=None):
@@ -18,7 +18,7 @@ class CadastroVeiculo(Toplevel):
         self.resizable(0, 0)  # impede de maximizar
         self.configure(background='#c9c9ff')
 
-        self.heading = Label(self, text="Cadastrar veiculos", bg='#c9c9ff', fg='white', font=(
+        self.heading = Label(self, text="Alteração dos dados de um Veiculos", bg='#c9c9ff', fg='white', font=(
             'Verdana 20 bold'))
         self.heading.place(x=650, y=0)
 
@@ -138,7 +138,7 @@ class CadastroVeiculo(Toplevel):
             'Verdana 15 bold'), command=self.clear_all)
         self.botao_limpar.place(x=600, y=700)
 
-        self.botao_cadastrar = Button(self, text="Cadastrar", width=62, height=1, bg='#baffc9', fg='black', font=(
+        self.botao_cadastrar = Button(self, text="Editar dados", width=62, height=1, bg='#baffc9', fg='black', font=(
             'Verdana 15 bold'), command=self.get_items)
         self.botao_cadastrar.place(x=600, y=650)
 
@@ -245,4 +245,4 @@ class CadastroVeiculo(Toplevel):
         self.mainloop()
 
 
-#CadastroVeiculo().run()
+#AlteraVeiculo().run()

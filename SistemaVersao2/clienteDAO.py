@@ -29,19 +29,19 @@ class ClienteDAO:
             print("Falha ao tentar inserir no banco de dados.")
 
 
-    def update(self, cliente, nome):
+    def update(self, cliente, id):
         '''Irá atualizar os registros no banco de dados'''
         try:
-            self.database.execute("UPDATE clientes SET nome =?, rg =?, cpf =?, email =?, telefone =?, nascimento =?, estado_civil =?, genero =?, cep =?, logradouro =?, bairro =?, numero_logradouro =?, cidade =?, estado =?, complemento =?, numero_cnh =?, numero_registro_cnh =?, data_validade_cnh =?,uf_cnh =?, contato_emergencial =?, nome_contato_emergencial WHERE nome=?", (cliente.nome, cliente.rg, cliente.cpf, cliente.email,  cliente.telefone,  cliente.nascimento,  cliente.estado_civil,  cliente.genero,  cliente.cep,  cliente.logradouro,  cliente.bairro,  cliente.numero_logradouro,  cliente.cidade,  cliente.estado,  cliente.complemento,  cliente.numero_cnh,  cliente.numero_registro_cnh,  cliente.data_validade_cnh,  cliente.uf_cnh,  cliente.cep,  cliente.contato_emergencial,  cliente.nome_contato_emergencial))
+            self.database.execute("UPDATE clientes SET nome =?, rg =?, cpf =?, email =?, telefone =?, nascimento =?, estado_civil =?, genero =?, cep =?, logradouro =?, bairro =?, numero_logradouro =?, cidade =?, estado =?, complemento =?, numero_cnh =?, numero_registro_cnh =?, data_validade_cnh =?,uf_cnh =?, contato_emergencial =?, nome_contato_emergencial=? WHERE id=?", (cliente.nome, cliente.rg, cliente.cpf, cliente.email,  cliente.telefone,  cliente.nascimento,  cliente.estado_civil,  cliente.genero,  cliente.cep,  cliente.logradouro,  cliente.bairro,  cliente.numero_logradouro,  cliente.cidade,  cliente.estado,  cliente.complemento,  cliente.numero_cnh,  cliente.numero_registro_cnh,  cliente.data_validade_cnh,  cliente.uf_cnh,  cliente.cep,  cliente.contato_emergencial,  cliente.nome_contato_emergencial))
             self.database.persist()
         except sqlite3.Error:
             print("Falha ao tentar inserir.")
 
 
-    def delete(self, nome):
+    def delete(self, id):
         "Deleta os registros do bando de dados"
         try:
-            self.database.execute("DELETE FROM cliente WHERE nome=?", ())
+            self.database.execute("DELETE FROM cliente WHERE id=?", (id,))
             self.database.persist()
         except sqlite3.Error as error:
             print("Falha ao tentar remover o registro")

@@ -1,6 +1,5 @@
 from dao import DataBaseAccess, sqlite3
-from veiculo import Veiculo
-
+from locacao import Locacao
 
 class LocacaoDAO:
     def __init__(self):
@@ -12,11 +11,41 @@ class LocacaoDAO:
     def view(self):
         resultado = None
         try:
-            self.database.execute('SELECT * FROM veiculos')
+            self.database.execute('SELECT * FROM locacao')
             resultado = self.database.fetchall()
         except sqlite3.Error:
             print('Falha ao tentar selecionar os registros.')
         return resultado
+
+    def insert(self, cliente):
+        '''Insere as locacao no banco de dados'''
+        try:
+            self.database.execute("INSERT INTO locacaoid_cliente, id_veiculo, data_inicial, data_final, valor_locacao) VALUES(?,?,?,?,?)", 
+            (locacao.id_cliente, locacao.id_veiculo, locacao.data_inicial, locacao.data_final, locacao.valor_locacao))
+            self.database.persist()
+        except sqlite3.Error:
+            print("Falha ao tentar inserir no banco de dados.")
+
+
+    def update(self, locacao, id):
+        '''Irá atualizar os registros no banco de dados'''
+        try:
+            self.database.execute("UPDATE locacao SET id_cliente=?, id_veiculo=?, data_inicial=?, data_final = ?, valor_locacao =? WHERE id=?", (locacao.id_cliente, locacao.id_veiculo, locacao.data_inicial, locacao.data_final, locacao.valor_locacao))
+            self.database.persist()
+        except sqlite3.Error:
+            print("Falha ao tentar inserir.")
+
+
+    def delete(self, id):
+        "Deleta as locacao do bando de dados"
+        try:
+            self.database.execute("DELETE FROM locacao WHERE id=?", (id,))
+            self.database.persist()
+        except sqlite3.Error as error:
+            print("Falha ao tentar remover o registro")
+            print("Classe de exceção: ", error.__class__)
+            print("Exceção é ", error.args)
+
 
     def close(self):
         '''Fechando conexão com o banco de dados.'''

@@ -5,7 +5,7 @@ import tkinter.messagebox
 import datetime
 
 
-class CadastroCliente(Toplevel):
+class AlteraCliente(Toplevel):
     '''Classe interface cadastrar cliente'''
 
     def __init__(self, master=None):
@@ -14,11 +14,11 @@ class CadastroCliente(Toplevel):
         self.dao = ClienteDAO()
 
         self.geometry('1500x850+0+0')
-        self.title('Cadastro de cliente')
+        self.title('Alterar dados do cliente')
         self.resizable(0, 0)  # impede de maximizar
         self.configure(background='#c9c9ff')
 
-        self.heading = Label(self, text="Cadastro de Clientes", bg='#c9c9ff', fg='white', font=(
+        self.heading = Label(self, text="Alterar dados de um cliente", bg='#c9c9ff', fg='white', font=(
             'Verdana 20 bold'))
         self.heading.place(x=650, y=0)
 
@@ -185,7 +185,7 @@ class CadastroCliente(Toplevel):
             'Verdana 15 bold'), command=self.clear_all)
         self.botao_limpar.place(x=1170, y=550)
 
-        self.botao_cadastrar = Button(self, text="Cadastrar", width=22, height=2, bg='#baffc9', fg='black', font=(
+        self.botao_cadastrar = Button(self, text="Alterar", width=22, height=2, bg='#baffc9', fg='black', font=(
             'Verdana 15 bold'), command=self.get_items)
         self.botao_cadastrar.place(x=1170, y=650)
 
@@ -314,7 +314,7 @@ class CadastroCliente(Toplevel):
         self.uf_cnh_entry.delete(0, END)
         self.contato_emergencial_entry.delete(0, END)
         self.nome_contato_emergencial_entry.delete(0, END)
-    
+    '''
     def view_command(self):
         "método para visualização dos resultados"
         try:
@@ -335,7 +335,7 @@ class CadastroCliente(Toplevel):
                 self.gui.lista_clientes.insert(END, r)
         except Exception as e:
             print(e)
-    
+    '''
     def close(self):
         self.dao.close()
         self.destroy()
@@ -344,4 +344,4 @@ class CadastroCliente(Toplevel):
         self.mainloop()
 
 
-# CadastroCliente().run()
+#AlteraCliente().run()
