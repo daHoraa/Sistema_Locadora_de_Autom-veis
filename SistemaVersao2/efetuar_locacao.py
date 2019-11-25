@@ -181,4 +181,4 @@ class EfetuaLocacao(Toplevel):
     def run(self):
         self.mainloop()
 
-EfetuaLocacao().run()
+#EfetuaLocacao().run()

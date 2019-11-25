@@ -20,7 +20,7 @@ class AlteraCliente(Toplevel):
 
         self.heading = Label(self, text="Alterar dados de um cliente", bg='#c9c9ff', fg='white', font=(
             'Verdana 20 bold'))
-        self.heading.place(x=650, y=0)
+        self.heading.place(x=550, y=0)
 
         # nome =========================================================================
         self.nome = Label(self, text="Nome:", bg='#c9c9ff', fg='white', font=(

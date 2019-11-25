@@ -1,17 +1,22 @@
 from tkinter import Tk, StringVar, Label, Entry, Listbox, Scrollbar, Button, END, Toplevel, Frame, X
-from cadastrar_veiculo import CadastroVeiculo
-from cadastrar_cliente import CadastroCliente
-from alterar_cliente import AlteraCliente
-from alterar_veiculo import AlteraVeiculo
-from efetuar_locacao import EfetuaLocacao
-from devolver_veiculo import DevolveVeiculo
-#from produto_atualizar import ProdutoAtualiza
-from delete_veiculo import DeleteVeiculo
-#from fornecedor.fornecedor_atualizar import FornecedorAtualizar
-# rom fornecedor.fornecedor_deletar import FornecedorDeletar
-from locacao import Locacao
+
+# IMPORTA OS ARQUIVOS DE CLIENTE =================
 from clienteDAO import ClienteDAO
 from cliente import Cliente
+from cadastrar_cliente import CadastroCliente
+from alterar_cliente import AlteraCliente
+from delete_cliente import DeletaCliente
+
+# IMPORTA OS ARQUIVOS DE LOCACAO =================
+from locacao import Locacao
+from efetuar_locacao import EfetuaLocacao
+from devolver_veiculo import DevolveVeiculo
+
+# IMPORTA OS ARQUIVOS DO VEICULO ====================
+from cadastrar_veiculo import CadastroVeiculo
+from alterar_veiculo import AlteraVeiculo
+from delete_veiculo import DeleteVeiculo
+
 import tkinter.messagebox
 import datetime
 
@@ -51,7 +56,7 @@ class Main(Frame):
         self.BotaoAlterarCliente.pack(fill=X, pady=0)
 
         self.BotaoExcluirCliente = Button(self.frame1, text="Excluir cliente", width=48, height=2, bg='#ffdfba', fg='black', font=(
-            'Verdana 15 bold'))
+            'Verdana 15 bold'), command = self.deleta_cliente)
         self.BotaoExcluirCliente.pack(fill=X, pady=0)
 
         # BOTOES VEICULO  =========================================================================
@@ -64,7 +69,7 @@ class Main(Frame):
         self.BotaoAlterarVeiculo.pack(fill=X, pady=0)
 
         self.BotaoExcluirVeiculo = Button(self.frame1, text="Excluir veiculo", width=30, height=2, bg='#c8a2c8', fg='black', font=(
-            'Verdana 15 bold'))
+            'Verdana 15 bold'), command = self.deletar_veiculo)
         self.BotaoExcluirVeiculo.pack(fill=X, pady=0)
 
         # BOTOES LOCACAO E SAIR  =========================================================================
@@ -80,32 +85,29 @@ class Main(Frame):
             'Verdana 15 bold'), command=self.close)
         self.BotaoSair.pack(fill=X, pady=0)
     
+    # METODOS VEICULO ========================
     def cadastrar_veiculo(self):
         CadastroVeiculo().run()
-
-        '''
-        def deletar_veiculo(self):
+    def deletar_veiculo(self):
         DeleteVeiculo().run()
-        '''
-
     def altera_veiculo(self):
         AlteraVeiculo().run()
-
+    # METODOS CLIENTE =============================================
     def cadastrar_cliente(self):
         CadastroCliente().run()
-
     def altera_cliente(self):    
         AlteraCliente().run()
-
+    def deleta_cliente(self):
+        DeletaCliente().run()
+    # METODOS LOCACAO ===========================================
     def efetuar_locacao(self):
         EfetuaLocacao().run()
-
     def devolve_veiculo(self):
         DevolveVeiculo().run()
-
+    # FECHAR JANELA PRINCIPAL ==============================
     def close(self):
         self.master.destroy()
-
+    # RODAR JANELA PRINCIPAL =================================
     def mainrun(self):
         self.master.mainloop()
 
