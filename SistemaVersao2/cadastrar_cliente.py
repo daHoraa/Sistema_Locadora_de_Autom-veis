@@ -314,7 +314,7 @@ class CadastroCliente(Toplevel):
         self.uf_cnh_entry.delete(0, END)
         self.contato_emergencial_entry.delete(0, END)
         self.nome_contato_emergencial_entry.delete(0, END)
-    
+    '''
     def view_command(self):
         "método para visualização dos resultados"
         try:
@@ -335,7 +335,7 @@ class CadastroCliente(Toplevel):
                 self.gui.lista_clientes.insert(END, r)
         except Exception as e:
             print(e)
-    
+    '''
     def close(self):
         self.dao.close()
         self.destroy()

@@ -79,82 +79,19 @@ class Main(Frame):
         self.BotaoSair = Button(self.frame1, text="Sair", width=22, height=2, bg='#ffb3ba', fg='black', font=(
             'Verdana 15 bold'), command=self.close)
         self.BotaoSair.pack(fill=X, pady=0)
-
-        '''
-              self.Botao1 = Button(self.frame1, text='Clique nesse botão para alterar.', command=self.alterar, bg='darkred')
-
-              self.entrada1 = Label(self.frame2, text='Usuário:', width=8, height=2, bg='#baffc9', fg='black', font=('Verdana 15 bold'))
-              self.entrada1.place(x=0, y=1000)
-
-              self.entrada2 = Entry(self.frame2)
-
-
-              self.Botao1.pack()
-              self.entrada1.pack(side=LEFT)
-              self.entrada2.pack(side=LEFT)
-              '''
-    '''
-    def alterar(self):
-
-        self.BotaoCadastrarCliente.pack_forget()  # Retiro todos esses
-        self.BotaoAlterarCliente.pack_forget()  # Retiro todos esses
-        self.BotaoExcluirCliente.pack_forget()  # Retiro todos esses
-        self.BotaoCadastrarVeiculo.pack_forget()  # Retiro todos esses
-        self.BotaoAlterarVeiculo.pack_forget()  # Retiro todos esses
-        self.BotaoExcluirVeiculo.pack_forget()  # Retiro todos esses
-        self.BotaoEfetuarLocacao.pack_forget()  # Retiro todos esses
-
-    '''
-        # self.BotaoSair.pack_forget() #Retiro todos esses
-        # self.heading.pack_forget() #Retiro todos esses
-    '''
-              self.Botao1.pack_forget() #Retiro todos esses
-
-              self.entrada1.pack_forget() #Retiro todos esses
-              self.entrada2.pack_forget() #Retiro todos esses
-
-              # E no frame aonde os três acima estavam, eu coloquei esses:
-              self.Botao2 = Button(self.frame3, text='Clique nesse botão para voltar.', command=self.reverter, bg='darkgray')
-              self.entrada3 = Label(self.frame2, text='Digite algo acima', height=2)
-              self.entrada4 = Entry(self.frame1)
-
-              self.Botao2.pack()
-              self.entrada3.pack(side=LEFT)
-              self.entrada4.pack(side=LEFT)
-    '''
-    '''
-    #def reverter(self):
-        self.Botao1.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada1.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada2.pack() # Para reverter eu simplesmente dei .pack() nesses
-
-        self.Botao2.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada1.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada2.pack() # Para reverter eu simplesmente dei .pack() nesses
-
-        self.Botao3.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada1.pack() # Para reverter eu simplesmente dei .pack() nesses
-        self.entrada2.pack() # Para reverter eu simplesmente dei .pack() nesses
-
-
-        self.Botao2.pack_forget() # e "eliminei esses". Se isso não for feito, ambos ocupam o mesmo Frame.
-        self.entrada3.pack_forget() # e "eliminei esses". Se isso não for feito, ambos ocupam o mesmo Frame.
-        self.entrada4.pack_forget() # e "eliminei esses". Se isso não for feito, ambos ocupam o mesmo Frame.
-        '''
-
+    
     def cadastrar_veiculo(self):
-
-        #self.alterar()
         CadastroVeiculo().run()
+
         '''
-              def deletar_veiculo(self):
-              DeleteVeiculo().run()
-              '''
+        def deletar_veiculo(self):
+        DeleteVeiculo().run()
+        '''
+
     def altera_veiculo(self):
         AlteraVeiculo().run()
 
     def cadastrar_cliente(self):
-        #self.alterar()
         CadastroCliente().run()
 
     def altera_cliente(self):    
@@ -167,7 +104,6 @@ class Main(Frame):
         DevolveVeiculo().run()
 
     def close(self):
-        # self.mainrun.quit
         self.master.destroy()
 
     def mainrun(self):
