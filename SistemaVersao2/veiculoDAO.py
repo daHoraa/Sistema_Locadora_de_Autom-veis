@@ -37,7 +37,7 @@ class VeiculoDAO:
     def delete(self, id):
         "Deleta os registros do banco de dados."
         try:
-            self.database.execute("DELETE FROM veiculo WHERE id = ?", (id,))
+            self.database.execute("DELETE FROM veiculos WHERE id = ?", (id,))
             self.database.persist()
         except sqlite3.Error as error:
             print("Falha ao tentar remover o registro")

@@ -160,14 +160,18 @@ class CadastroVeiculo(Toplevel):
             'Verdana 15 bold'))
         self.pesquisar_veiculo.place(x=900, y=65)
 
+        self.view_command()
 
-    def update_list(self):
+    def view_command(self):
+        "método para visualização dos resultados"
         try:
+            rows = self.dao.view()
             self.veiculo_box.delete(0, END)
-            for item in self.dao.view():
-                self.veiculo_box.insert(END, item)
-        except Exception:
-            print('Erro na lista veiculos.')
+            for r in rows:
+                self.veiculo_box.insert(END, r)
+        except Exception as e:
+            print(e)
+
 
     def get_items(self):
         self.veiculo.marca = self.marca_entry.get()
@@ -209,7 +213,7 @@ class CadastroVeiculo(Toplevel):
                     tkinter.messagebox.showinfo(
                         'Aviso!', 'Cadastro Realizado com Sucesso!')
                     self.clear_all()
-                    self.update_list()
+                    self.view_command()
 
     def clear_all(self):
         self.marca_entry.delete(0, END)

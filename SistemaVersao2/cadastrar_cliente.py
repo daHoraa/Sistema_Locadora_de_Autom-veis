@@ -212,15 +212,18 @@ class CadastroCliente(Toplevel):
         self.pesquisar_cliente = Label(self, text="Lista de clientes Cadastrados:", bg='#c9c9ff',  font=(
             'Verdana 15 bold'))
         self.pesquisar_cliente.place(x=30, y=500)
-        self.update_list()
+        self.view_command()
 
-    def update_list(self):
+    
+    def view_command(self):
+        "método para visualização dos resultados"
         try:
+            rows = self.dao.view()
             self.lista_clientes.delete(0, END)
-            for item in self.dao.view():
-                self.lista_clientes.insert(END, item)
-        except Exception:
-            print('Erro na lista clientes.')
+            for r in rows:
+                self.lista_clientes.insert(END, r)
+        except Exception as e:
+            print(e)
 
     def get_items(self):
         self.cliente.nome = self.nome_entry.get()
@@ -276,11 +279,7 @@ class CadastroCliente(Toplevel):
             except ValueError:
                 tkinter.messagebox.showinfo(
                     'Aviso!', 'O campo rg cnh deve ser preenchido com números!')
-            try:
-                self.cliente.uf_cnh = int(self.cliente.uf_cnh)
-            except ValueError:
-                tkinter.messagebox.showinfo(
-                    'Aviso!', 'O campo uf cnh deve ser preenchido com números!!')
+    
             else:
                 try:
                     self.dao.insert(self.cliente)
@@ -314,28 +313,7 @@ class CadastroCliente(Toplevel):
         self.uf_cnh_entry.delete(0, END)
         self.contato_emergencial_entry.delete(0, END)
         self.nome_contato_emergencial_entry.delete(0, END)
-    '''
-    def view_command(self):
-        "método para visualização dos resultados"
-        try:
-            rows = self.dao.view()
-            self.lista_clientes.delete(0, END)
-            for r in rows:
-                self.lista_clientes.insert(END, r)
-        except Exception as e:
-            print(e)
-
-    def search_command(self):
-        "método para buscar registros"
-        self.lista_clientes.delete(0, END)
-        self.__fill_current_client()
-        try:
-            rows = self.dao.search(self.currentClient)
-            for r in rows:
-                self.gui.lista_clientes.insert(END, r)
-        except Exception as e:
-            print(e)
-    '''
+    
     def close(self):
         self.dao.close()
         self.destroy()
